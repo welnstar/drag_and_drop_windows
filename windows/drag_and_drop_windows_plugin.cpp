@@ -71,10 +71,10 @@ DragAndDropWindowsPlugin::DragAndDropWindowsPlugin(flutter::BinaryMessenger* mes
 std::optional<LRESULT> DragAndDropWindowsPlugin::MessageHandler(HWND window, UINT const message, WPARAM const wparam, LPARAM const lparam) noexcept {
   std::optional<LRESULT> result;
   switch (message) {
-    case WM_ACTIVATEAPP: {
-      DragAcceptFiles(window, true);
-      return 0;
-    }
+ //   case WM_ACTIVATEAPP: {
+ //     DragAcceptFiles(window, true);
+ //     return 0;
+ //   }
     case WM_DROPFILES: {
       HDROP hdrop = reinterpret_cast<HDROP>(wparam);
       UINT file_count = DragQueryFileW(hdrop, 0xFFFFFFFF, nullptr, 0);
